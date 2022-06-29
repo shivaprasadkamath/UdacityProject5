@@ -1,0 +1,26 @@
+# Create web hosts based on docker image
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone-amazinggames
+spec:
+  selector:
+    matchLabels:
+      app: capstone-amazinggames
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: capstone-amazinggames
+    spec:
+      containers:
+      - name: capstone-amazinggames
+        image: shivaprasadkamath/udacity_capstone
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
