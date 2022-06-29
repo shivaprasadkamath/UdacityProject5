@@ -1,4 +1,4 @@
-count=$(grep -i eksctl-capstone-starkids output.txt | wc -l)
+count=$(grep -i eksctl-capstone-amazinggames output.txt | wc -l)
 if [[ $count -gt 0 ]]
     then 
     echo "Skipping Cluster creation .. Infrastructure Exists"

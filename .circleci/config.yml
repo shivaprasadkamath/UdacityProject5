@@ -111,15 +111,15 @@ jobs:
           name: update kube cluster
           command: |
             # # update cluster with yaml - Rolling Deployment
-             aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name capstone-starkids
+             aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name capstone-amazinggames
              kubectl apply -f capstone_deploy.yml
              kubectl get nodes
              kubectl get deployment
              kubectl get pod -o wide
              kubectl apply -f services.yml
              kubectl get services
-             kubectl rollout restart deployment/capstone-starkids
-             kubectl describe svc capstone-starkids
+             kubectl rollout restart deployment/capstone-amazinggames
+             kubectl describe svc capstone-amazinggames
 
 workflows:
   default:
